@@ -6,7 +6,6 @@ function fetchIngredient(_id) {
             $("#_id").val(ingredient._id);
             $("#name").val(ingredient.name);
             $("#price").val(ingredient.price);
-
         });
 }
 
@@ -25,24 +24,23 @@ function putIngredient(ingredient) {
             "Content-Type": "application/json; charset=utf-8",
         },
     })
-        .then(res => res.json())
-        .then(res => showNotification());
-
-
+    .then(res => res.json())
+    .then(res => showNotification());
 }
 
 /**
  * Get the form and submit it with fetch API
  */
 let ingredientForm = $("#ingredient-form");
-ingredientForm.submit(event => {
+ingredientForm.submit( event => {
 
     let ingredient = getIngredientData();
     putIngredient(ingredient);
-
     event.preventDefault();
     event.currentTarget.reset();
-    window.location.href = '/app/ingredient/ingredients.html';
+    setTimeout(() => {
+        window.location.href = '/app/ingredient/ingredients.html';
+    }, 2000);
 });
 
 /**
@@ -62,7 +60,7 @@ function getIngredientData() {
 function showNotification() {
     let ingredientAlert = $("#ingredient-alert");
     ingredientAlert.toggle();
-    setTimeout(() => ingredientAlert.toggle(), 5000);
+    setTimeout(() => ingredientAlert.toggle(), 2000);
 }
 
 
