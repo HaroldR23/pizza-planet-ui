@@ -2,7 +2,7 @@ fetch('http://127.0.0.1:5000/report/')
     .then(response => response.json())
     .then(report => {
         if(report.length === 0) {
-            let reportEmptyTemplate = createReportEmptyTemplate({message:"Don't froget populate the database"});
+            let reportEmptyTemplate = createReportEmptyTemplate({message:"Don't forget populate the database"});
             $("#report").append(reportEmptyTemplate)
         } else {
             let map_customers = {}

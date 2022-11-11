@@ -1,6 +1,6 @@
 
 function fetchBeverage(_id) {
-    fetch(`http://127.0.0.1:5000/beverage/id/${_id}`)
+    fetch(`http://127.0.0.1:5000/beverage/${_id}`)
         .then(response => response.json())
         .then(beverage => {
             $("#_id").val(beverage._id);
