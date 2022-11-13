@@ -50,8 +50,7 @@ function getOrderData() {
         client_phone: $("input[name='phone']").val(),
         size_id: $("input[name='size']:checked").val(),
         ingredients,
-        beverages,
-        from_seeder: false
+        beverages
     };
 }
 
